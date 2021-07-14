@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:TESTLAUNCHER"
         xmlns:Properties="clr-namespace:TESTLAUNCHER.Properties" x:Class="TESTLAUNCHER.Select"
         mc:Ignorable="d"
-        Title="Select" Height="450" Width="800" ResizeMode="NoResize" Icon="devil.ico" Topmost="True">
-    <Grid Height="421" Width="794">
+        Title="Select" Height="450" Width="800" ResizeMode="NoResize" Icon="devil.ico" Topmost="True" WindowStyle="None">
+    <Grid Height="450" Width="800" MouseDown="Grid_MouseDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -20,11 +20,33 @@
         <Grid.Background>
             <ImageBrush ImageSource="1579214717_1-2.jpg"/>
         </Grid.Background>
-        <Button x:Name="button" Content="Играть" Margin="0,0,119,113" Width="116" RenderTransformOrigin="0.5,0.5" FontFamily="Impact" FontSize="18" BorderBrush="White" Height="35" MaxWidth="150" MaxHeight="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="button_Click" Foreground="White">
+        <Button x:Name="button" Content="Играть" Margin="0,0,119,113" Width="116" RenderTransformOrigin="0.5,0.5" FontFamily="Impact" FontSize="18" Height="35" MaxWidth="150" MaxHeight="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="button_Click" Foreground="White">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5" Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF262626" Offset="0"/>
+                    <GradientStop Color="#FF222222" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="Black"/>
                 </LinearGradientBrush>
             </Button.Background>
             <Button.Effect>
@@ -47,7 +69,7 @@
                 <ImageBrush ImageSource="7156850df85fd16f.png"/>
             </Image.OpacityMask>
         </Image>
-        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="310" Source="7156850df85fd16f.png" Stretch="UniformToFill" Margin="72,92,0,0" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="image_Copy_MouseLeftButtonDown">
+        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="312" Source="7156850df85fd16f.png" Stretch="UniformToFill" Margin="70,92,0,0" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="image_Copy_MouseLeftButtonDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -57,9 +79,31 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="button_Copy" Content="Регистрация" Margin="0,0,238,113" Width="116" RenderTransformOrigin="0.5,0.5" FontFamily="Impact" FontSize="18" BorderBrush="White" Height="35" MaxWidth="150" MaxHeight="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="button_Click" Foreground="White">
+        <Button x:Name="button_Copy" Content="Регистрация" Margin="0,0,238,113" Width="116" RenderTransformOrigin="0.5,0.5" FontFamily="Impact" FontSize="18" Height="35" MaxWidth="150" MaxHeight="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="button_Click" Foreground="White">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF262626" Offset="0"/>
+                    <GradientStop Color="#FF2F2F2F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="Black"/>
                     <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
@@ -76,5 +120,6 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Image x:Name="image1" Height="32" Margin="0,3,3,0" VerticalAlignment="Top" Source="enter.png" MouseLeftButtonDown="image1_MouseLeftButtonDown" Width="32" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
